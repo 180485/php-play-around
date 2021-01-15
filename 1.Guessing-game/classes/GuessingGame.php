@@ -1,16 +1,23 @@
 <?php
 
+
 class GuessingGame
 {
     public $maxGuesses;
     public $secretNumber;
+    public $result;
+   
 
-    // TODO: set a default amount of max guesses
-    public function __construct(int $maxGuesses)
+    // set a default amount of max guesses
+    public function __construct(int $maxGuesses = 3)
     {
         // We ask for the max guesses when someone creates a game
         // Allowing your settings to be chosen like this, will bring a lot of flexibility
         $this->maxGuesses = $maxGuesses;
+        
+        if(!empty($_SESSION["secretNumber"])){
+            $this->secretNumber = $_SESSION["secretNumber"];
+        }    
     }
 
     public function run()
@@ -18,25 +25,60 @@ class GuessingGame
         // This function functions as your game "engine"
         // It will run every time, check what needs to happen and run the according functions (or even create other classes)
 
-        // TODO: check if a secret number has been generated yet
+        // TODO: add secret numbers (according to attempts)
         // --> if not, generate one and store it in the session (so it can be kept when the user submits the form)
-        // TODO: check if the player has submitted a guess
-        // --> if so, check if the player won (run the related function) or not (give a hint if the number was higher/lower or run playerLoses if all guesses are used).
-        // TODO as an extra: if a reset button was clicked, use the reset function to set up a new game
+        if (empty($this->secretNumber)){
+            $this->generateSecretNumber(); 
+        }
+
+        if (!empty($_POST["guess"]) ){
+
+            
+
+            if($_POST["guess"] == $this->secretNumber){
+                $this->playerWins();
+            } else if ($_POST["guess"] < $this->secretNumber) {
+                $this->higher();
+            } else if ($_POST["guess"] > $this->secretNumber) {
+                $this->lower();
+            } 
+
+        }
+        
+    }
+    
+
+    public function generateSecretNumber()
+    {
+        $this->secretNumber = rand(1,10);
+      
+    }
+    public function higher()
+    {
+        $this->result = '<div class="alert alert-warning" role="alert">Too Low try again !</div>';
+    }
+    public function lower()
+    {
+        $this->result = '<div class="alert alert-danger" role="alert"> Too High try again ! </div>';
     }
 
     public function playerWins()
     {
-        // TODO: show a winner message (mention how many tries were needed)
+        $this->result = '<div class="alert alert-success" role="alert"> "Correct! Good Job" </div>';
     }
 
     public function playerLoses()
     {
-        // TODO: show a lost message (mention the secret number)
+        $this->result = $result;
+      
     }
 
-    public function reset()
-    {
-        // TODO: Generate a new secret number and overwrite the previous one
+    public function reset()  
+    {   
+        //TODO: generate a new secret number to session
+        $this->reset= $reset;
+     
     }
+   
+
 }

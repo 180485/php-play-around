@@ -8,12 +8,23 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+
+
+session_start();
+
 // Load you classes
 require_once 'classes/GuessingGame.php';
 
+
 // Start the game
 // As this game is rather simple, one class should be sufficient
-$game = new GuessingGame(3);
-$game->run();
+
+
+
+    $game = new GuessingGame();
+    $game->run();
+
+
+    
 
 require 'view.php';
