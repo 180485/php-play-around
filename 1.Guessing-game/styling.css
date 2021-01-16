@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
+body {
+    background-color: #f59e9100;
+}
+
+h1{
+    font-family: 'Monoton', cursive;
+    margin-top:-50px;
+    color: #873e23;
+    
+}
+
+
+img{
+    width:20%;
+    margin-left:40px;
+    margin-top:20px;
+ 
+}
+
+.container{
+    margin-top: -300px;
+    margin-left: 300px;
+    font-family: 'Cabin Sketch', cursive;
+
+}
+
+
+h4{
+    color:#873e23;
+    font-family: 'Cabin Sketch', cursive;
+    
+}
+
+

@@ -9,11 +9,12 @@ class GuessingGame
    
 
     // set a default amount of max guesses
-    public function __construct(int $maxGuesses = 3)
+    public function __construct(int $maxGuesses = 5 , int $secretNumber= -1)
     {
         // We ask for the max guesses when someone creates a game
         // Allowing your settings to be chosen like this, will bring a lot of flexibility
         $this->maxGuesses = $maxGuesses;
+        
         
         if(!empty($_SESSION["secretNumber"])){
             $this->secretNumber = $_SESSION["secretNumber"];
@@ -25,7 +26,6 @@ class GuessingGame
         // This function functions as your game "engine"
         // It will run every time, check what needs to happen and run the according functions (or even create other classes)
 
-        // TODO: add secret numbers (according to attempts)
         // --> if not, generate one and store it in the session (so it can be kept when the user submits the form)
         if (empty($this->secretNumber)){
             $this->generateSecretNumber(); 
@@ -38,13 +38,25 @@ class GuessingGame
             if($_POST["guess"] == $this->secretNumber){
                 $this->playerWins();
             } else if ($_POST["guess"] < $this->secretNumber) {
-                $this->higher();
+                $this->higherGuess();
             } else if ($_POST["guess"] > $this->secretNumber) {
-                $this->lower();
+                $this->lowerGuess();
             } 
 
         }
         
+    }
+    
+    //function for maxguesses for 5 times
+    public function maxGuesses() 
+    {
+        if(!empty($_POST["tries"])){
+            $this->maxGuesses = $_POST['tries'];
+
+        }else if($_POST["tries"]  < 1 ){
+            $this->result = 'To many guesses';
+            // Reset the game.
+           }
     }
     
 
@@ -53,11 +65,11 @@ class GuessingGame
         $this->secretNumber = rand(1,10);
       
     }
-    public function higher()
+    public function higherGuess()
     {
         $this->result = '<div class="alert alert-warning" role="alert">Too Low try again !</div>';
     }
-    public function lower()
+    public function lowerGuess()
     {
         $this->result = '<div class="alert alert-danger" role="alert"> Too High try again ! </div>';
     }
@@ -75,10 +87,10 @@ class GuessingGame
 
     public function reset()  
     {   
-        //TODO: generate a new secret number to session
-        $this->reset= $reset;
+  
+        return isset($_POST['reset']);
+        $this->secretNumber = $_SESSION["secretNumber"]=0;
      
     }
-   
-
+    
 }

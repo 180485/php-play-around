@@ -24,7 +24,6 @@ require_once 'classes/GuessingGame.php';
     $game = new GuessingGame();
     $game->run();
 
-
     
 
 require 'view.php';
