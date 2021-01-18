@@ -35,13 +35,13 @@ class RockPaperScissors
 				$this->playerLose();
 
 			}elseif(($_POST["playerChoice"]=="rock") && ($this->computerChoice =="scissors")){
-				$this->playerDraw();
+				$this->playerWin();
 				
 			}elseif(($_POST["playerChoice"]=="rock") && ($this->computerChoice =="paper")){
 				$this->playerLose();
 
 			}elseif(($_POST["playerChoice"]=="paper") && ($this->computerChoice =="rock")){
-				$this->playerDraw();
+				$this->playerWIN();
 				
 			}elseif(($_POST["playerChoice"]=="paper") && ($this->computerChoice =="scissors")){
 				$this->playerLose();
@@ -78,7 +78,7 @@ class RockPaperScissors
 
 	public function playerDraw () 
 	{
-		$this->result='<div class="alert alert-warning" role="alert"> YOU WIN !</div>';
+		$this->result='<div class="alert alert-warning" role="alert"> DRAW !</div>';
 	}
 
 }
