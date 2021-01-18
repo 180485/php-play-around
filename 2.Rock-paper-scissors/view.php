@@ -24,9 +24,9 @@
 	<h3><?php if(!empty($game->result)){ echo $game->result;} ?></h3>
 	<h3>Player </h3>
 	<form  method="post" >
-  		<button name="playerChoice" value="scissors"> <img src="jari.png" alt="scissors" ></button>
-  		<button name="playerChoice" value="rock"> <img src="batu1.png" alt="rock"></button>
-  		<button name="playerChoice" value="paper"> <img src="kertas.png" alt="paper"></button> 
+  		<button name="playerChoice" value="scissors"> <img src="image/jari.png" alt="scissors" ></button>
+  		<button name="playerChoice" value="rock"> <img src="image/batu1.png" alt="rock"></button>
+  		<button name="playerChoice" value="paper"> <img src="image/kertas.png" alt="paper"></button> 
 	</form> 
 </div>	
 <input type="submit" name="reset" value="Reset">	

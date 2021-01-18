@@ -89,16 +89,16 @@ class RockPaperScissors
 		if($this->choice == 1){
 			$this->computerChoice="paper";
 			echo "<center>"."<h3>"."COMPUTER " ."</h3>"."</center>";
-			echo "<center><img src=\"kertas.png\" alt=\"image of paper\">"."</center>";
+			echo "<center><img src=\"image/kertas.png\" alt=\"image of paper\">"."</center>";
 		}else if($this->choice == 2){
 			$this->computerChoice="scissors";
 			echo "<center>"."<h3>"."COMPUTER " ."</h3>"."</center>";
-			echo "<center><img src=\"jari.png\" alt=\"image of scissors\">"."</center>";
+			echo "<center><img src=\"image/jari.png\" alt=\"image of scissors\">"."</center>";
 		}else if($this->choice == 2){
 		}else if($this->choice == 3){
 			$this->computerChoice="rock";
 			echo "<center>"."<h3>"."COMPUTER " ."</h3>"."</center>";
-			echo "<center><img src=\"batu1.png\" alt=\"image of rock1\">"."</center>";
+			echo "<center><img src=\"image/batu1.png\" alt=\"image of rock1\">"."</center>";
 		}
 	
 	}	
