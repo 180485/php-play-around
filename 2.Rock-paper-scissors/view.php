@@ -10,22 +10,25 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
 	<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="styling.css">    
+	<link rel="stylesheet" href="style.css">    
 	<title>Casino royale - rock, paper, scissors</title>
 
 </head>
 <body>
-    
-<h1><?php if(!empty($game->result)){ echo $game->result;} ?></h1>
-<h3>Player Choice : </h3>
-<form  method="post" >
-  <button name="playerChoice" value="scissors"> <img src="scissors1.png" alt="scissors"></button>
-  <button name="playerChoice" value="rock"> <img src="rock1.png" alt="rock"></button>
-  <button name="playerChoice" value="paper"> <img src="paper.png" alt="paper"></button> 
-  <input type="submit" name="reset" value="Reset">
-</form> 
-<h2><?php if(!empty($game->playerScore)){ echo "Player Score :"." ".$game->playerScore;} ?></h2>
-	
 
+<div class="score-board">
+	<?php if(!empty($game->computerScore)){ echo "Comp :"." ".$game->computerScore."<br>";} ?>
+	<?php if(!empty($game->playerScore)){ echo "user :"." ".$game->playerScore;} ?>
+</div>
+<div class="choices">
+	<h3><?php if(!empty($game->result)){ echo $game->result;} ?></h3>
+	<h3>Player </h3>
+	<form  method="post" >
+  		<button name="playerChoice" value="scissors"> <img src="jari.png" alt="scissors" ></button>
+  		<button name="playerChoice" value="rock"> <img src="batu1.png" alt="rock"></button>
+  		<button name="playerChoice" value="paper"> <img src="kertas.png" alt="paper"></button> 
+	</form> 
+</div>	
+<input type="submit" name="reset" value="Reset">	
 </body>
 </html>
