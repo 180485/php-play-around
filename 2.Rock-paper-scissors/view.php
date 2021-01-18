@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<head>
 	<meta charset="UTF-8">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css"
     rel="stylesheet"/>
@@ -10,24 +11,19 @@
 	<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="styling.css">    
-	
-	<title>Casino royale - guessing game</title>
+	<title>Casino royale - rock, paper, scissors</title>
+
 </head>
 <body>
-<div class="content">
-	<img src="girl.png" alt="">
-	<div class="container">
-			<h1>Number Guessing Game </h1>
-			<h2><?php if(!empty($game->result)){ echo $game->result;} ?></h2>
-		<form  method="post">
-			<label for="number">Guess here </label>
-			<input type="hidden" name="tries" value="<?= $tries ?>">
-			<input type="number" min="0" max="10" name="guess">
-    		<input type="submit" name="submit" value="Submit">
-			<input type="submit" name="reset" value="Reset">
-		</form>	
-		<h3>Your Number : <?php if(isset($_POST["guess"])){echo $_POST["guess"];}?></h3>
-	</div>
-</div>	
+    <h1>Rock Paper Scissors</h1>
+	<h2><?php if(!empty($game->result)){ echo $game->result;} ?></h2>
+
+<form  method="post" >
+  <button name="playerChoice" value="scissors"> <img src="scissors1.png" alt="scissors"></button>
+  <button name="playerChoice" value="rock"> <img src="rock1.png" alt="rock"></button>
+  <button name="playerChoice" value="paper"> <img src="paper.png" alt="paper"></button> 
+</form> 
+	
+
 </body>
 </html>

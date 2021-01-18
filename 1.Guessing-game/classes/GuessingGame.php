@@ -1,6 +1,5 @@
 <?php
 
-
 class GuessingGame
 {
     public $maxGuesses;
@@ -9,7 +8,7 @@ class GuessingGame
    
 
     // set a default amount of max guesses
-    public function __construct(int $maxGuesses = 5 , int $secretNumber= -1)
+    public function __construct(int $maxGuesses = 3 , int $secretNumber= -1)
     {
         // We ask for the max guesses when someone creates a game
         // Allowing your settings to be chosen like this, will bring a lot of flexibility
@@ -17,7 +16,7 @@ class GuessingGame
         
         
         if(!empty($_SESSION["secretNumber"])){
-            $this->secretNumber = $_SESSION["secretNumber"];
+           
         }    
     }
 
@@ -33,7 +32,6 @@ class GuessingGame
 
         if (!empty($_POST["guess"]) ){
 
-            
 
             if($_POST["guess"] == $this->secretNumber){
                 $this->playerWins();
@@ -47,15 +45,17 @@ class GuessingGame
         
     }
     
-    //function for maxguesses for 5 times
+    //function for maxguesses for 3 times
     public function maxGuesses() 
     {
-        if(!empty($_POST["tries"])){
+        if(isset($_POST["tries"])){
             $this->maxGuesses = $_POST['tries'];
+      
 
         }else if($_POST["tries"]  < 1 ){
             $this->result = 'To many guesses';
-            // Reset the game.
+         
+            
            }
     }
     
@@ -90,6 +90,7 @@ class GuessingGame
   
         return isset($_POST['reset']);
         $this->secretNumber = $_SESSION["secretNumber"]=0;
+        session_destroy();
      
     }
     

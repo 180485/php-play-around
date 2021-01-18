@@ -2,28 +2,30 @@
 
 
 body {
-    background-color: #f59e9100;
+    background-color: #fbecd3;
 }
 
 h1{
     font-family: 'Monoton', cursive;
-    margin-top:-50px;
+    margin-top:-30px;
     color: #873e23;
     
 }
 
 
 img{
-    width:20%;
+    width:25%;
     margin-left:40px;
     margin-top:20px;
  
 }
 
 .container{
-    margin-top: -300px;
-    margin-left: 300px;
+    margin-top: -280px;
+    margin-left: 330px;
     font-family: 'Cabin Sketch', cursive;
+    color: #873e23;
+    width: 650px;
 
 }
 
@@ -35,3 +37,9 @@ h4{
 }
 
 
+.content{
+    width: 980px;
+    height: 400px;
+    background-color:rgba(255, 255, 255, 0.6);
+    margin-top: 70px;
+}
