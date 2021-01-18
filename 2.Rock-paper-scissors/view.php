@@ -15,14 +15,16 @@
 
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-	<h2><?php if(!empty($game->result)){ echo $game->result;} ?></h2>
-
+    
+<h1><?php if(!empty($game->result)){ echo $game->result;} ?></h1>
+<h3>Player Choice : </h3>
 <form  method="post" >
   <button name="playerChoice" value="scissors"> <img src="scissors1.png" alt="scissors"></button>
   <button name="playerChoice" value="rock"> <img src="rock1.png" alt="rock"></button>
   <button name="playerChoice" value="paper"> <img src="paper.png" alt="paper"></button> 
+  <input type="submit" name="reset" value="Reset">
 </form> 
+<h2><?php if(!empty($game->playerScore)){ echo "Player Score :"." ".$game->playerScore;} ?></h2>
 	
 
 </body>

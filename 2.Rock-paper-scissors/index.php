@@ -13,25 +13,11 @@ session_start();
 // Load you classes
 require_once 'classes/RockPaperScissors.php';
 
-
-function whatIsHappening() {
-
-    echo '<h2>$_POST</h2>';
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-
-    echo '<h2>$_SESSION</h2>';
-    echo "<pre>";
-    var_dump($_SESSION);
-    echo "</pre>";
-}
-whatIsHappening();
-
 // Start the game
 $game = new RockPaperScissors();
 $game->run();
 
-var_dump($game);
+
+
 
 require 'view.php';
