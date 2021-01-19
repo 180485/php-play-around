@@ -17,8 +17,8 @@
 <body>
 
 <div class="score-board">
-	<?php if(!empty($game->computerScore)){ echo "Comp :"." ".$game->computerScore."<br>";} ?>
-	<?php if(!empty($game->playerScore)){ echo "user :"." ".$game->playerScore;} ?>
+	<?php if(!empty($_SESSION["computerScore"])){ echo "Comp:"." ".$_SESSION["computerScore"]."<br>";} ?>
+	<?php if(!empty($_SESSION["playerScore"])){ echo "player:"." ".$_SESSION["playerScore"];} ?>
 </div>
 <div class="choices">
 	<h3><?php if(!empty($game->result)){ echo $game->result;} ?></h3>
@@ -27,8 +27,9 @@
   		<button name="playerChoice" value="scissors"> <img src="image/jari.png" alt="scissors" ></button>
   		<button name="playerChoice" value="rock"> <img src="image/batu1.png" alt="rock"></button>
   		<button name="playerChoice" value="paper"> <img src="image/kertas.png" alt="paper"></button> 
+		<button name="playerChoice" value="reset"> <img src="image/reset.png" alt="paper"></button> 
 	</form> 
-</div>	
-<input type="submit" name="reset" value="Reset">	
+	<h3>Make Your Move</h3>
+</div>
 </body>
 </html>

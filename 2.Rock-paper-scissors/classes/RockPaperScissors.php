@@ -21,6 +21,10 @@ class RockPaperScissors
 	public function run()
 	
     {
+		if(!empty($_POST["playerChoice"]) && ($_POST["playerChoice"] == "reset")){
+			$this->reset();
+		}
+
 		//getting the score
 		if(!empty($_SESSION["playerScore"])){
 			$this->playerScore = $_SESSION["playerScore"];
@@ -31,53 +35,50 @@ class RockPaperScissors
 		
 		}
 		
-	
-        // This function functions as your game "engine"
-		// Now it's on to you to take the steering wheel and determine how it will work
-		//TODO: generate computer choice
-		//TODO: need to compare 
 
 		if(!empty($_POST["playerChoice"])){
 			if(($_POST["playerChoice"]) == ($this->computerChoice)){
 			$this->playerDraw();
 			
-
 			}elseif(($_POST["playerChoice"]=="scissors") && ($this->computerChoice =="paper")){
 			$this->playerWin();
-			$_SESSION['playerScore']++;
+			$this->playerScore++;
 		
 			
 			
 			}elseif(($_POST["playerChoice"]=="scissors") && ($this->computerChoice =="rock")){
 			$this->playerLose();
-			$_SESSION['computerScore']++;
+			$this->computerScore++;
 
 
 			}elseif(($_POST["playerChoice"]=="rock") && ($this->computerChoice =="scissors")){
 			$this->playerWin();
-			$_SESSION['playerScore']++;
+			$this->playerScore++;
 		
 		
 				
 			}elseif(($_POST["playerChoice"]=="rock") && ($this->computerChoice =="paper")){
 			$this->playerLose();
-			$_SESSION['computerScore']++;
+			$this->computerScore++;
 		
 
 
 			}elseif(($_POST["playerChoice"]=="paper") && ($this->computerChoice =="rock")){
 			$this->playerWIN();
-			$_SESSION['playerScore']++;
+			$this->playerScore++;
 			
 		
 				
 			}elseif(($_POST["playerChoice"]=="paper") && ($this->computerChoice =="scissors")){
 			$this->playerLose();
-			$_SESSION['computerScore']++;
+			$this->computerScore++;
 		
 
 			}
+			$_SESSION['playerScore']=$this->playerScore;
+			$_SESSION['computerScore']=$this->computerScore;
 		}
+
 
 	}
 
@@ -94,7 +95,6 @@ class RockPaperScissors
 			$this->computerChoice="scissors";
 			echo "<center>"."<h3>"."COMPUTER " ."</h3>"."</center>";
 			echo "<center><img src=\"image/jari.png\" alt=\"image of scissors\">"."</center>";
-		}else if($this->choice == 2){
 		}else if($this->choice == 3){
 			$this->computerChoice="rock";
 			echo "<center>"."<h3>"."COMPUTER " ."</h3>"."</center>";
@@ -123,19 +123,20 @@ class RockPaperScissors
 	}
 	public function reset()
     {
+		$this->playerScore = 0;
+		$this->computerScore = 0;
 
-		if(isset($_POST['reset'])){
-		$_SESSION['computerScore'] = 0;
-		$_SESSION['playerScore'] = 0;
-		session_destroy();
+		$_SESSION["playerScore"]=0;
+		$_SESSION["computerScore"]=0;
 
-		}
 
-		//TODO: still need to reset player score back to 0
+		}	
 
         
-	}
-	
- 
-
 }
+	
+
+
+		
+
+        

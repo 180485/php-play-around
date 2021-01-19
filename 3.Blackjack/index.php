@@ -14,3 +14,16 @@ require_once 'view_blackjack.php';
 // TODO: pat yourself on the back
 // Great job! This means you've earned the freedom to build this exercise from scratch.
 // One final word of advice: this game is much more complex, so you might want to use multiple classes in here.
+function whatIsHappening() {
+
+    echo '<h2>$_POST</h2>';
+    echo "<pre>";
+    var_dump($_POST);
+    echo "</pre>";
+
+    echo '<h2>$_SESSION</h2>';
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";
+}
+whatIsHappening();

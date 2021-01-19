@@ -13,9 +13,9 @@
 	<title>Casino royale - guessing game</title>
 
     <form name="form" method="post" action="">
-		<button class ="btn btn-info" name="button" value="newgame" type="submit">New Game</button>
-		<button class ="btn btn-danger" name="button" value="play" type="submit">Play</button>
-		<button class ="btn btn-success" name="button" value="stop" type="submit">Stop</button>
+		<button class ="button" name="button" value="newgame" type="submit">New Game</button>
+		<button class ="button" name="button" value="play" type="submit">Play</button>
+		<button class ="button" name="button" value="stop" type="submit">Stop</button>
 	</form >
 </head>
 <body>

@@ -90,7 +90,7 @@ class GuessingGame
   
         return isset($_POST['reset']);
         $this->secretNumber = $_SESSION["secretNumber"]=0;
-        session_destroy();
+        resession_destroy();
      
     }
     
