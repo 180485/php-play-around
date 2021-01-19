@@ -106,7 +106,7 @@ class RockPaperScissors
 	
 	public function playerWin () 
 	{
-		$this->result='<div class="alert alert-success" role="alert"> YOU WIN !</div>';
+		$this->result='<div class="alert alert-success &#x1F60A;" role="alert" <i class="far fa-smile"></i> YOU WIN !</div>';
 		
 	}
 
