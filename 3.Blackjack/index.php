@@ -40,6 +40,8 @@ if(isset($_POST["Start"])){
 
 if(isset($_POST["Hit"])){
     $game = new Game();
+    $game->getCard();
+    $game->getValue();
     var_dump($game);
 
     
