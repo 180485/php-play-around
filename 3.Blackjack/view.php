@@ -14,11 +14,16 @@
 	<title>BlackJack</title>
 <head>
 <body>
+<p> Total value: <?php if(!empty($game->totalValue)){echo $game->totalValue;} ?> </p>
+<p> Your card: <?php if(!empty($game->player)){
+        foreach ($game->player as $card) {
+            echo $card. " ";
+        }}?></p>
+<?php if(!empty($game->result)){ ?><p> Your result: <?php echo $game->result;} ?> </p>
 <form method="post">
     <input type="submit" name="Start" class="button" value="Start"/>
     <input type="submit" name="Hit" class="button" value="Hit"/>
     <input type="submit" name="Stand" class="button" value="Stand"/>
-    <input type="submit" name="Surrender" class="button" value="Surrender"/>
 </form>
 
 </body>

@@ -53,10 +53,14 @@ class Game
     public function getCard(){
         array_push($this->player,rand(1,10));
         $_SESSION["player"]= $this->player;
-        
+ 
 
-        
+    }
 
+    public function restart(){
+         $_SESSION["player"]=[];
+         $_SESSION["totalValue"]="";
+    
     }
 
 

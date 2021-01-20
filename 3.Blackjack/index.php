@@ -33,7 +33,6 @@ require_once 'blackjack.php';
 if(isset($_POST["Start"])){
     $game = new Game();
     $game->getValue();
-    $game->getCompare();
     var_dump($game);
 
 }
@@ -42,6 +41,16 @@ if(isset($_POST["Hit"])){
     $game = new Game();
     $game->getCard();
     $game->getValue();
+    var_dump($game);
+
+    
+    
+ }
+
+ if(isset($_POST["Stand"])){
+    $game = new Game();
+    $game->getCompare();
+    $game->restart();
     var_dump($game);
 
     
